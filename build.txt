@@ -1,3 +1,4 @@
 displayName = Gluttony&#39;s Sandbox
 author = Gluttony
 version = 0.1
+buildIgnore = .git/*, .vs/*, Properties/*, .gitattributes, .gitignore, *.user

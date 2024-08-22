@@ -11,6 +11,12 @@
 			"executablePath": "$(DotNetName)",
 			"commandLineArgs": "$(tMLServerPath)",
 			"workingDirectory": "$(tMLSteamPath)"
+		},
+		"TestWorld": {
+			"commandName": "Executable",
+			"executablePath": "$(DotNetName)",
+			"commandLineArgs": "$(tMLPath) -skipselect \":TestWorld\"",
+			"workingDirectory": "$(tMLSteamPath)"
 		}
 	}
 }
