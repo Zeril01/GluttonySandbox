@@ -10,7 +10,7 @@ namespace GluttonySandbox.Utilities
     {
         private const string _name = GluttonySandbox.NameOfLogoTooltip;
 
-        public static void InsertEmptyTooltipForLogo(Mod mod, List<TooltipLine> tooltips)
+        public static void InsertEmptyTooltip(Mod mod, List<TooltipLine> tooltips)
         {
             const int numberOfKnockbackTooltip = 5;
 
