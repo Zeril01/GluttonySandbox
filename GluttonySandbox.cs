@@ -1,15 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria.ModLoader;
-
 namespace GluttonySandbox
 {
-	// Please read https://github.com/tModLoader/tModLoader/wiki/Basic-tModLoader-Modding-Guide#mod-skeleton-contents for more information about the various files in a mod.
-	public class GluttonySandbox : Mod
-	{
-
-	}
+    public class GluttonySandbox : Mod
+    {
+        public const string AssetPath = nameof(GluttonySandbox) + "/Assets/";
+        public const string NameOfLogoTooltip = "UnprldLogo";
+    }
 }

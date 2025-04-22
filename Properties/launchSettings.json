@@ -1,16 +1,12 @@
 {
-	"profiles": {
-		"Terraria": {
-			"commandName": "Executable",
-			"executablePath": "$(DotNetName)",
-			"commandLineArgs": "$(tMLPath)",
-			"workingDirectory": "$(tMLSteamPath)"
-		},
-		"TerrariaServer": {
-			"commandName": "Executable",
-			"executablePath": "$(DotNetName)",
-			"commandLineArgs": "$(tMLServerPath)",
-			"workingDirectory": "$(tMLSteamPath)"
-		}
-	}
+    "profiles":
+    {
+        "Gluttony's Sandbox":
+        {
+            "commandName": "Executable",
+            "executablePath": "$(DotNetName)",
+            "commandLineArgs": "$(tMLPath) -skipselect \":Test\"",
+            "workingDirectory": "$(tMLSteamPath)"
+        }
+    }
 }

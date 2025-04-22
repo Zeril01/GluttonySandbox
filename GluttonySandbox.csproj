@@ -7,10 +7,12 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <Folder Include="Assets\Projectiles\" />
+	  <Folder Include="Content\Projectiles\" />
+	  <Folder Include="Enums\" />
+	</ItemGroup>
 
 	<!-- References -->
-	<ItemGroup>
-		
-	</ItemGroup>
 
 </Project>
