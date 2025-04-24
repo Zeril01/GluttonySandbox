@@ -4,11 +4,11 @@
     {
         private const int _lengthOfTile = 16;
 
-        public static void SetFields(int type, float lifetimeInSeconds, float maxRangeInTiles, float maxSpeed)
+        public static void SetFields(int type, float maxSpeed, float maxRangeInTiles, float lifetimeInSeconds = -1f)
         {
-            ProjectileID.Sets.YoyosLifeTimeMultiplier[type] = lifetimeInSeconds;
-            ProjectileID.Sets.YoyosMaximumRange[type] = maxRangeInTiles * _lengthOfTile;
             ProjectileID.Sets.YoyosTopSpeed[type] = maxSpeed;
+            ProjectileID.Sets.YoyosMaximumRange[type] = maxRangeInTiles * _lengthOfTile;
+            ProjectileID.Sets.YoyosLifeTimeMultiplier[type] = lifetimeInSeconds;
         }
     }
 }

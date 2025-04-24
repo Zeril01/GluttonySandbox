@@ -8,7 +8,7 @@ namespace GluttonySandbox.Utilities
 {
     public static class YoyoItemUtils
     {
-        private const string _name = GluttonySandbox.NameOfLogoTooltip;
+        private static readonly string _name = GluttonySandbox.NameOfLogoTooltip;
 
         public static void InsertEmptyTooltip(Mod mod, List<TooltipLine> tooltips)
         {
@@ -22,10 +22,7 @@ namespace GluttonySandbox.Utilities
 
         public static void DrawUnprldLogo(DrawableTooltipLine line)
         {
-            if (line.Name != _name)
-            {
-                return;
-            }
+            if (line.Name != _name) return;
 
             const int paddingForLogo = 1;
             Vector2 position = new(line.X - paddingForLogo, line.Y - paddingForLogo);

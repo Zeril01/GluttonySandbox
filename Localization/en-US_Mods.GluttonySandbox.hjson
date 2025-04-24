@@ -3,6 +3,14 @@ Items: {
 		DisplayName: Abduction
 		Tooltip: ""
 	}
+
+	Corruption: {
+		DisplayName: Corruption
+		Tooltip: ""
+	}
 }
 
-Projectiles.Abduction.DisplayName: Abduction
+Projectiles: {
+	Abduction.DisplayName: Abduction
+	Corruption.DisplayName: Corruption
+}
