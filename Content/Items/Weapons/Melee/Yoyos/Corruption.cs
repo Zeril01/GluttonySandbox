@@ -2,14 +2,14 @@
 
 using Terraria.Enums;
 
-using static GluttonySandbox.Utilities.GeneralUtils;
-using static GluttonySandbox.Utilities.YoyoItemUtils;
+using static GluttonySandbox.Utilities.GeneralUtility;
+using static GluttonySandbox.Utilities.YoyoItemUtility;
 
 namespace GluttonySandbox.Content.Items.Weapons.Melee.Yoyos
 {
     public class Corruption : ModItem
     {
-        public override string Texture => TexturePath(nameof(Item), nameof(Corruption));
+        public override string Texture => GetTexturePath(nameof(Item), nameof(Corruption));
 
         public override void SetDefaults()
         {

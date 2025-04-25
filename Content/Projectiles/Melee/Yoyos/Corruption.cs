@@ -1,15 +1,14 @@
-﻿using static GluttonySandbox.Utilities.GeneralUtils;
-using static GluttonySandbox.Utilities.YoyoProjectileUtils;
+﻿using static GluttonySandbox.Constants;
+using static GluttonySandbox.Utilities.GeneralUtility;
+using static GluttonySandbox.Utilities.YoyoProjectileUtility;
 
 namespace GluttonySandbox.Content.Projectiles.Melee.Yoyos
 {
     public class Corruption : ModProjectile
     {
-        private readonly float _maxSpeed = 12f, _maxRangeInTiles = 11.5f, _lifetimeInSeconds = 5.5f;
+        public override string Texture => GetTexturePath(nameof(Projectile), nameof(Corruption));
 
-        public override string Texture => TexturePath(nameof(Projectile), nameof(Corruption));
-
-        public override void SetStaticDefaults() => SetFields(Type, _maxSpeed, _maxRangeInTiles, _lifetimeInSeconds);
+        public override void SetStaticDefaults() => SetFields(Type, maxSpeed: 12f, maxRangeInTiles: 11.5f, lifetimeInSeconds: 5.5f);
 
         public override void SetDefaults() => Projectile.CloneDefaults(ProjectileID.WoodYoyo);
 
@@ -25,8 +24,7 @@ namespace GluttonySandbox.Content.Projectiles.Melee.Yoyos
         {
             if (!Main.rand.NextBool(3)) return;
 
-            const int ticksPerSecond = 60;
-            int duration = Main.rand.Next(ticksPerSecond, (ticksPerSecond * 3) + 1);
+            int duration = Main.rand.Next(TicksPerSecond, (TicksPerSecond * 3) + 1);
 
             target.AddBuff(BuffID.Frostburn, duration);
         }

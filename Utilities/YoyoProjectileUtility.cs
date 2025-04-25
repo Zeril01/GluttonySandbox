@@ -1,13 +1,13 @@
 ﻿namespace GluttonySandbox.Utilities
 {
-    public static class YoyoProjectileUtils
+    public static class YoyoProjectileUtility
     {
-        private const int _lengthOfTile = 16;
-
         public static void SetFields(int type, float maxSpeed, float maxRangeInTiles, float lifetimeInSeconds = -1f)
         {
+            const int WidthOfAnyBlock = 16;
+
             ProjectileID.Sets.YoyosTopSpeed[type] = maxSpeed;
-            ProjectileID.Sets.YoyosMaximumRange[type] = maxRangeInTiles * _lengthOfTile;
+            ProjectileID.Sets.YoyosMaximumRange[type] = maxRangeInTiles * WidthOfAnyBlock;
             ProjectileID.Sets.YoyosLifeTimeMultiplier[type] = lifetimeInSeconds;
         }
     }
