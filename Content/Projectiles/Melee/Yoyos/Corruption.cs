@@ -1,14 +1,21 @@
 ﻿using static GluttonySandbox.Constants;
-using static GluttonySandbox.Utilities.GeneralUtility;
-using static GluttonySandbox.Utilities.YoyoProjectileUtility;
+using static GluttonySandbox.Content.Projectiles.Melee.Yoyos.Setter;
+using static GluttonySandbox.PathFinder;
 
 namespace GluttonySandbox.Content.Projectiles.Melee.Yoyos
 {
     public class Corruption : ModProjectile
     {
+        private readonly Stats _stats = new()
+        {
+            MaxSpeed = 12f,
+            MaxRangeInTiles = 11.5f,
+            LifetimeInSeconds = 5.5f
+        };
+
         public override string Texture => GetTexturePath(nameof(Projectile), nameof(Corruption));
 
-        public override void SetStaticDefaults() => SetFields(Type, maxSpeed: 12f, maxRangeInTiles: 11.5f, lifetimeInSeconds: 5.5f);
+        public override void SetStaticDefaults() => SetFields(Type, _stats);
 
         public override void SetDefaults() => Projectile.CloneDefaults(ProjectileID.WoodYoyo);
 

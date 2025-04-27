@@ -6,7 +6,7 @@ using static GluttonySandbox.Common.Conditions;
 
 namespace GluttonySandbox.Common
 {
-    public class GluttonySandboxGlobalNPC : GlobalNPC
+    public class Globalist : GlobalNPC
     {
         public override void ModifyGlobalLoot(GlobalLoot globalLoot)
         {

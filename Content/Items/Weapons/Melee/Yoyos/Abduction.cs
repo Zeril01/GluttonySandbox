@@ -2,8 +2,8 @@
 
 using Terraria.Enums;
 
-using static GluttonySandbox.Utilities.GeneralUtility;
-using static GluttonySandbox.Utilities.YoyoItemUtility;
+using static GluttonySandbox.Content.Items.Weapons.Melee.Yoyos.TooltipHelper;
+using static GluttonySandbox.PathFinder;
 
 namespace GluttonySandbox.Content.Items.Weapons.Melee.Yoyos
 {

@@ -6,17 +6,13 @@ using static GluttonySandbox.Constants;
 
 namespace GluttonySandbox.Common
 {
-    public class GluttonySandboxSystem : ModSystem
+    public class Loader : ModSystem
     {
-        public static Asset<Texture2D> UnprldLogoTexture
-        {
-            get;
-            private set;
-        }
+        public static Asset<Texture2D> UnprldLogoTexture { get; private set; }
 
         public override void Load()
         {
-            string UnprldLogoPath = AssetPath + NameOfLogoTooltip;
+            const string UnprldLogoPath = AssetPath + NameOfLogoTooltip;
 
             UnprldLogoTexture = ModContent.Request<Texture2D>(UnprldLogoPath);
         }

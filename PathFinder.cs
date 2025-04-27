@@ -1,8 +1,8 @@
 ﻿using static GluttonySandbox.Constants;
 
-namespace GluttonySandbox.Utilities
+namespace GluttonySandbox
 {
-    public static class GeneralUtility
+    public static class PathFinder
     {
         public static string GetTexturePath(string typeOfEntity, string nameOfClass) => $"{AssetPath}{typeOfEntity}s/{nameOfClass}";
     }

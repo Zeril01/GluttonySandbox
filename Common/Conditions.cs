@@ -4,22 +4,37 @@ namespace GluttonySandbox.Common
 {
     public static class Conditions
     {
-        public class YoyoAbduction : IItemDropRuleCondition
+        public abstract class BaseYoyoCondition : IItemDropRuleCondition
         {
-            public bool CanDrop(DropAttemptInfo info) => !Main.hardMode && info.npc.HasPlayerTarget && info.player.ZoneGlowshroom && info.npc.lifeMax > 5 && !info.npc.friendly && info.npc.value > 0f;
+            private protected abstract bool IsZoneConditionMet(Player player);
+
+            private protected abstract string SetDescription();
+
+            public bool CanDrop(DropAttemptInfo info)
+            {
+                return !Main.hardMode
+                       && IsZoneConditionMet(info.player)
+                       && !info.npc.CountsAsACritter
+                       && !info.npc.friendly;
+            }
 
             public bool CanShowItemDropInUI() => true;
 
-            public string GetConditionDescription() => null;
+            public string GetConditionDescription() => SetDescription();
         }
 
-        public class YoyoCorruption : IItemDropRuleCondition
+        public class YoyoAbduction : BaseYoyoCondition
         {
-            public bool CanDrop(DropAttemptInfo info) => !Main.hardMode && info.npc.HasPlayerTarget && info.player.ZoneSnow && info.npc.lifeMax > 5 && !info.npc.friendly && info.npc.value > 0f;
+            private protected override bool IsZoneConditionMet(Player player) => player.ZoneGlowshroom;
 
-            public bool CanShowItemDropInUI() => true;
+            private protected override string SetDescription() => "Drops in Pre-Hardmode from enemies in the Glowing Mushroom biome";
+        }
 
-            public string GetConditionDescription() => null;
+        public class YoyoCorruption : BaseYoyoCondition
+        {
+            private protected override bool IsZoneConditionMet(Player player) => player.ZoneSnow;
+
+            private protected override string SetDescription() => "Drops in Pre-Hardmode from enemies in the Snow biome";
         }
     }
 }
