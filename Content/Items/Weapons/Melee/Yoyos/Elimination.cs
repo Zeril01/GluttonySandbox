@@ -7,17 +7,17 @@ using static GluttonySandbox.PathFinder;
 
 namespace GluttonySandbox.Content.Items.Weapons.Melee.Yoyos
 {
-    public class Corruption : ModItem
+    public class Elimination : ModItem
     {
-        public override string Texture => GetTexturePath(nameof(Item), nameof(Corruption));
+        public override string Texture => GetTexturePath(nameof(Item), nameof(Elimination));
 
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.WoodYoyo);
-            Item.SetWeaponValues(15, 4.25f);
+            Item.SetWeaponValues(16, 4.75f);
             Item.SetShopValues(ItemRarityColor.Blue1, Item.sellPrice(gold: 1));
 
-            Item.shoot = ModContent.ProjectileType<Projectiles.Melee.Yoyos.Corruption>();
+            Item.shoot = ModContent.ProjectileType<Projectiles.Melee.Yoyos.Elimination>();
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips) => InsertEmptyTooltip(Mod, tooltips);

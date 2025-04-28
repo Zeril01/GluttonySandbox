@@ -14,6 +14,7 @@ namespace GluttonySandbox.Common
 
             AddYoyo(new YoyoAbduction(), ModContent.ItemType<Abduction>());
             AddYoyo(new YoyoCorruption(), ModContent.ItemType<Corruption>());
+            AddYoyo(new YoyoElimination(), ModContent.ItemType<Elimination>());
         }
     }
 }

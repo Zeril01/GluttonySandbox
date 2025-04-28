@@ -36,5 +36,12 @@ namespace GluttonySandbox.Common
 
             private protected override string SetDescription() => "Drops in Pre-Hardmode from enemies in the Snow biome";
         }
+
+        public class YoyoElimination : BaseYoyoCondition
+        {
+            private protected override bool IsZoneConditionMet(Player player) => player.ZoneDesert || player.ZoneUndergroundDesert;
+
+            private protected override string SetDescription() => "Drops in Pre-Hardmode from enemies in the Desert biome";
+        }
     }
 }

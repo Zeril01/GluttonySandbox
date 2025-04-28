@@ -2,6 +2,7 @@
 
 using Microsoft.Xna.Framework;
 
+using static GluttonySandbox.Common.Loader;
 using static GluttonySandbox.Constants;
 
 namespace GluttonySandbox.Content.Items.Weapons.Melee.Yoyos
@@ -25,7 +26,7 @@ namespace GluttonySandbox.Content.Items.Weapons.Melee.Yoyos
             const int PaddingForLogo = 1;
             Vector2 position = new(line.X - PaddingForLogo, line.Y - PaddingForLogo);
 
-            Main.spriteBatch.Draw(Common.Loader.UnprldLogoTexture.Value, position, Main.MouseTextColorReal);
+            Main.spriteBatch.Draw(UnprldLogoTexture.Value, position, Main.MouseTextColorReal);
         }
     }
 }

@@ -8,9 +8,15 @@ Items: {
 		DisplayName: Corruption
 		Tooltip: ""
 	}
+
+	Elimination: {
+		DisplayName: Elimination
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
 	Abduction.DisplayName: Abduction
 	Corruption.DisplayName: Corruption
+	Elimination.DisplayName: Elimination
 }
