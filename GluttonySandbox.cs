@@ -1,7 +1,7 @@
 namespace GluttonySandbox
 {
-    public class GluttonySandbox : Mod
+    internal sealed class GluttonySandbox : Mod
     {
-
+        internal static bool IsPreHardmode = !Main.hardMode;
     }
 }

@@ -1,8 +1,8 @@
 ﻿namespace GluttonySandbox
 {
-    public static class Constants
+    internal static class Constants
     {
         public const string AssetPath = $"{nameof(GluttonySandbox)}/Assets/", NameOfLogoTooltip = "UnprldLogo";
-        public const int TicksPerSecond = 60;
+        public const byte TicksPerSecond = 60;
     }
 }

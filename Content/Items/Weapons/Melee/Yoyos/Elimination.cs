@@ -1,27 +1,15 @@
-﻿using System.Collections.Generic;
-
-using Terraria.Enums;
-
-using static GluttonySandbox.Content.Items.Weapons.Melee.Yoyos.TooltipHelper;
-using static GluttonySandbox.PathFinder;
+﻿using Terraria.Enums;
 
 namespace GluttonySandbox.Content.Items.Weapons.Melee.Yoyos
 {
-    public class Elimination : ModItem
+    internal sealed class Elimination : YoyoItem
     {
-        public override string Texture => GetTexturePath(nameof(Item), nameof(Elimination));
-
-        public override void SetDefaults()
+        private protected override void SetFields()
         {
-            Item.CloneDefaults(ItemID.WoodYoyo);
             Item.SetWeaponValues(16, 4.75f);
             Item.SetShopValues(ItemRarityColor.Blue1, Item.sellPrice(gold: 1));
 
             Item.shoot = ModContent.ProjectileType<Projectiles.Melee.Yoyos.Elimination>();
         }
-
-        public override void ModifyTooltips(List<TooltipLine> tooltips) => InsertEmptyTooltip(Mod, tooltips);
-
-        public override void PostDrawTooltipLine(DrawableTooltipLine line) => DrawUnprldLogo(line);
     }
 }

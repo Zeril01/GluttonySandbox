@@ -1,29 +1,18 @@
 ﻿using static GluttonySandbox.Constants;
-using static GluttonySandbox.Content.Projectiles.Melee.Yoyos.Setter;
-using static GluttonySandbox.PathFinder;
 
 namespace GluttonySandbox.Content.Projectiles.Melee.Yoyos
 {
-    public class Corruption : ModProjectile
+    internal sealed class Corruption : YoyoProjectile
     {
-        private readonly Stats _stats = new()
-        {
-            MaxSpeed = 12f,
-            MaxRangeInTiles = 11.5f,
-            LifetimeInSeconds = 5.5f
-        };
-
-        public override string Texture => GetTexturePath(nameof(Projectile), nameof(Corruption));
-
-        public override void SetStaticDefaults() => SetFields(Type, _stats);
-
-        public override void SetDefaults() => Projectile.CloneDefaults(ProjectileID.WoodYoyo);
+        private protected override float MaxSpeed => 12f;
+        private protected override float MaxRangeInTiles => 11.5f;
+        private protected override float LifetimeInSeconds => 5.5f;
 
         public override void PostAI()
         {
             if (!Main.rand.NextBool(6)) return;
 
-            int dust = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch);
+            ushort dust = (ushort)Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.IceTorch);
             Main.dust[dust].noGravity = true;
         }
 
@@ -31,7 +20,7 @@ namespace GluttonySandbox.Content.Projectiles.Melee.Yoyos
         {
             if (!Main.rand.NextBool(3)) return;
 
-            int duration = Main.rand.Next(TicksPerSecond, (TicksPerSecond * 3) + 1);
+            byte duration = (byte)Main.rand.Next(TicksPerSecond, (TicksPerSecond * 3) + 1);
 
             target.AddBuff(BuffID.Frostburn, duration);
         }

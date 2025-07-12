@@ -6,9 +6,9 @@ using static GluttonySandbox.Constants;
 
 namespace GluttonySandbox.Common
 {
-    public class Loader : ModSystem
+    internal sealed class AssetLoader : ModSystem
     {
-        public static Asset<Texture2D> UnprldLogoTexture { get; private set; }
+        internal static Asset<Texture2D> UnprldLogoTexture { get; private set; }
 
         public override void Load()
         {
